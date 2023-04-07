@@ -9,16 +9,37 @@ class AnomalysController < ApplicationController
   
   def create
     @anomaly = Anomaly.new(anomaly_params)
-
-    respond_to do |format|
-      if @anomaly.save
-        format.html { redirect_to anomaly_url(@anomaly), notice: "Message was successfully created." }
-        format.json { render :show, status: :created, location: @anomaly }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @anomaly.errors, status: :unprocessable_entity }
-      end
+    if @anomaly.save
+      flash[:notice] = "新規登録をしました"
+      redirect_to :anomalys
+    else
+      render "new"
     end
+  end
+
+  def show
+    @anomaly = Anomaly.find(params[:id])
+  end
+
+  def edit
+    @anomaly = Anomaly.find(params[:id])
+  end
+
+  def update
+    @anomaly = Anomaly.find(params[:id])
+     if @anomaly.update(anomaly_params)
+       flash[:notice] = "更新しました"
+       redirect_to :anomalys
+     else
+       render "edit"
+     end
+  end
+
+  def destroy
+    @anomaly = Anomaly.find(params[:id])
+      @anomaly.destroy
+      flash[:notice] = "削除しました"
+      redirect_to anomalys_path
   end
 
   private
