@@ -1,0 +1,15 @@
+<div class="anomaly-show text-break">
+  <h2 class="my-3"><%= @anomaly.title %></h2>
+  <%= @anomaly.content %>
+</div>
+
+<%= link_to "戻る",:back, class: "btn other-btn btn-block"  %>
+
+<div class="author float-right">
+  <%= link_to edit_anomaly_path(@anomaly), class:"btn" do %>
+    編集
+  <% end %>
+  <%= link_to anomaly_path(@anomaly), method: :delete, data: { confirm: "削除しますか？" }, class:"btn" do %>
+    削除
+  <% end %>
+</div>
