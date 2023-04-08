@@ -2,6 +2,7 @@ class AnomalysController < ApplicationController
   def index
     @q = Anomaly.ransack(params[:q])
     @anomalys = @q.result
+    @tag_list=Tag.all
   end
 
   def new
@@ -10,7 +11,10 @@ class AnomalysController < ApplicationController
   
   def create
     @anomaly = Anomaly.new(anomaly_params)
+
+    tag_list = params[:anomaly][:tag_name].split(',')
     if @anomaly.save
+      @anomaly.save_tag(tag_list)
       flash[:notice] = "新規登録をしました"
       redirect_to :anomalys
     else
@@ -20,10 +24,12 @@ class AnomalysController < ApplicationController
 
   def show
     @anomaly = Anomaly.find(params[:id])
+    @anomaly_tags = @anomaly.tags
   end
 
   def edit
     @anomaly = Anomaly.find(params[:id])
+    @tag_list=@anomaly.tags.pluck(:tag_name).join(',')
   end
 
   def update
