@@ -1,6 +1,7 @@
 class AnomalysController < ApplicationController
   def index
-    @anomalys = Anomaly.all
+    @q = Anomaly.ransack(params[:q])
+    @anomalys = @q.result
   end
 
   def new
