@@ -1,5 +1,8 @@
 <div class="anomaly-show text-break">
   <h2 class="my-3"><%= @anomaly.title %></h2>
+  <% @anomaly_tags.each do |tag| %>
+    <%=tag.tag_name%><%="(#{tag.anomalys.count})" %>
+  <% end %>
   <%= @anomaly.content %>
 </div>
 

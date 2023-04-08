@@ -1,8 +1,13 @@
 <div class="form-group">
-  <%= form_with model: @anomaly do |f| %>
+  <%= form_with model: @anomaly, url: anomalys_path do |f| %>
     <div>
       <%= f.label :title %>
       <%= f.text_field :title, required: true, placeholder: "タイトル" %>
+    </div>
+
+    <div>
+      <%= f.label :tag_name, "タグ (,で区切ると複数タグ登録できます)" %>
+      <%= f.text_field :tag_name, class:"form-control"%>
     </div>
   
     <div class='field'>
