@@ -49,6 +49,12 @@ class AnomalysController < ApplicationController
       redirect_to anomalys_path
   end
 
+  def search_tag
+    @tag_list = Tag.all
+    @tag = Tag.find(params[:tag_id])
+    @anomalys = @tag.anomalys
+  end
+
   private
   def anomaly_params
     params.require(:anomaly).permit(:title, :content)

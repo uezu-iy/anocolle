@@ -1,7 +1,8 @@
 <div class="anomaly-show text-break">
   <h2 class="my-3"><%= @anomaly.title %></h2>
+  
   <% @anomaly_tags.each do |tag| %>
-    <%=tag.tag_name%><%="(#{tag.anomalys.count})" %>
+    <%= link_to tag.tag_name,search_tag_path(tag_id: tag.id)%><%="(#{tag.anomalys.count})" %>
   <% end %>
   <%= @anomaly.content %>
 </div>

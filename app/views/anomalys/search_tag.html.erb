@@ -1,17 +1,10 @@
-<div class="container-fluid">
+<h3 class="text-center"><%= "#{@tag.tag_name} を含む投稿一覧" %></h3>
+div class="container-fluid">
   <div class="row">
     <div class="col-12 text-center">
       <h2>異常一覧</h2>
     </div>
   </div>
-
-<h1>タイトル検索</h1>
-<%= search_form_for @q, url: anomalys_path do |f| %>
-  <%= f.label :title_cont, 'タイトル名' %>
-  <%= f.search_field :title_cont %>
-  <br>
-  <%= f.submit '検索' %>
-<% end %>
 
 <% @tag_list.each do |list|%>
   <%=link_to list.tag_name, search_tag_path(tag_id: list.id) %>
@@ -59,3 +52,5 @@
     </div>      
   <% end %>  
 </div>
+
+<%= link_to "戻る",:back, class: "btn other-btn btn-block"  %>
