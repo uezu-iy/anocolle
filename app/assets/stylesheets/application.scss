@@ -13,112 +13,115 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap/scss/bootstrap";
- @import "variables";
+@import "bootstrap/scss/bootstrap";
+@import "variables";
 
- .search-form-control {
-    border-radius: 30px;
-    padding-left: 20px;
-    height: 45px;
-  }
+.search-form-control {
+  border-radius: 30px;
+  padding-left: 20px;
+  height: 45px;
+}
 
- /* 全体 */
+/* 全体 */
 .base-container {
-    margin: 0 auto;
-    padding: 1rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.text-center {
+  color: #6c757d;
+  margin-bottom: 30px;
+}
+a {
+  color: $main-color;
+  &:hover {
+    color: $main-color;
   }
-  
-  .text-center {
+}
+.a-link {
+  color: black;
+  &:hover {
     color: #6c757d;
-    margin-bottom: 30px;
   }
-  
-  a {
-    color: $main-color;
-    &:hover {
-      color: $main-color;
-    }
-  }
-  
-  .a-link {
-    color: black;
-    &:hover {
-      color: #6c757d;
-    }
-  }
-  .a-link-btn {
+}
+.a-link-btn {
+  color: #fff;
+  &:hover {
     color: #fff;
-    &:hover {
-      color: #fff;
-    }
   }
-  
-  /* body */
-  body {
-    padding-top: 80px;
-  }
-  
-  /* _anomaly */
-  .anomaly {
-    background-color: $anomaly-list-color;
-    border-top: 1px solid $anomaly-list-border-color;
-    border-bottom: 1px solid $anomaly-list-border-color;
-    margin: 0 200px 0px 200px ;
-    padding: 60px 16px 0px 60px;
-    width: 100%;
-    box-shadow: 2px 2px 7px 6px RGB(0 0 0 / 4%);
-    background-color: #ffffff;
+}
 
-    .reaction {
-      display: flex;
-      justify-content: space-between;
-    }
-  }
-  
-  .fa-tags {
-    color: $accent-color;
-  }
-  
-  /* アイコンサイズ */
+ /* body */
+body {
+  padding-top: 80px;
+}
 
-  .bi-search {
-    font-size:30px;
-    padding-right: 10px;
+/* _anomaly */
+.anomaly {
+  background-color: $anomaly-list-color;
+  border-top: 1px solid $anomaly-list-border-color;
+  border-bottom: 1px solid $anomaly-list-border-color;
+  margin: 0 200px 0px 200px ;
+  padding: 60px 16px 0px 60px;
+  width: 100%;
+  box-shadow: 2px 2px 7px 6px RGB(0 0 0 / 4%);
+  background-color: #ffffff;
+  .reaction {
+    display: flex;
+    justify-content: space-between;
   }
-  
-  /* ボタン */
-  .main-btn {
-    @include btn_color;
-  }
-  
-  .other-btn {
-    @include btn_color($other-color);
-  }
+}
+.fa-tags {
+  color: $accent-color;
+}
 
-  .btn-search {
-    background-color: $other-color;
-    color: $main-color;
-    border-color: transparent;
-    padding-right: 10px;
-    padding-left: 20px;
-    font-size: 15px;
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
-    height: 45px;
-  }
+/* _form */
+.form {
+  height: 50px;
+}
+.post-btn {
+  @include anomaly_btn;
+}
+.cancel-btn {
+  @include anomaly_btn($other-color);
+}
+.new_form_frame {
+  margin: 20px;
+}
 
-  .fa-solid {
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-  }
+/* アイコンサイズ */
+.bi-search {
+  font-size:30px;
+  padding-right: 10px;
+}
 
-  .input-group-btn {
-    position: relative;
-    font-size: 0;
-    white-space: nowrap;
-    width: 1%;
-    white-space: nowrap;
-    vertical-align: middle;
-    display: table-cell;
-  }
-  
+/* ボタン */
+.main-btn {
+  @include btn_color;
+}
+.other-btn {
+  @include btn_color($other-color);
+}
+.btn-search {
+  background-color: $other-color;
+  color: $main-color;
+  border-color: transparent;
+  padding-right: 10px;
+  padding-left: 20px;
+  font-size: 15px;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  height: 45px;
+}
+.fa-solid {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+.input-group-btn {
+  position: relative;
+  font-size: 0;
+  white-space: nowrap;
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+  display: table-cell;
+}
