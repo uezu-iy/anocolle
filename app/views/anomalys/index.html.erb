@@ -5,22 +5,23 @@
     </div>
   </div>
 
-<h1>タイトル検索</h1>
-<%= search_form_for @q, url: anomalys_path do |f| %>
-  <%= f.label :title_cont, 'タイトル名' %>
-  <%= f.search_field :title_cont %>
-  <br>
-  <%= f.submit '検索' %>
-<% end %>
-
-<% @tag_list.each do |list|%>
-  <%=link_to list.tag_name, search_tag_path(tag_id: list.id) %>
-  <%="(#{list.anomalys.count})" %>
-<% end %>
-
-<% @anomalys.each do |anomaly| %>
-  <i class="fas fa-tag"><%= anomaly.tags.map(&:tag_name).join(', ') %></i>
-<% end %>
+  <div class="col-xs-12">
+    <%= search_form_for @q, url: anomalys_path do |f| %>
+      <div class="input-group">
+        <%= f.search_field :title_cont, class: "form-control search-form-control col-md-5 offset-md-3 ", placeholder: 'キーワードを入力'  %>
+          <span class="input-group-btn">
+            <%= f.button type: :submit, class: "btn-search" do %>
+              <i class="bi bi-search"></i>
+            <% end %>
+          </span>
+      </div>
+    <% end %>
+  </div>
+  
+  <% @tag_list.each do |list|%>
+    <%=link_to list.tag_name, search_tag_path(tag_id: list.id) %>
+    <%="(#{list.anomalys.count})" %>
+  <% end %>
 
   <% @anomalys.each do |anomaly| %>  
     <div class="col-xs-12 anomalys">
@@ -48,9 +49,8 @@
                     <%= link_to "削除", anomaly, method: :delete, data: { confirm: "本当に削除しますか？" } %>
                   </td>
                 </tr>
-          
                 <div class="anomaly-content">
-                  <h4><%= link_to "#{anomaly.title}", anomaly_path(anomaly), class:"btn-block erb-link" %></h4>
+                  <h4><%= link_to "#{anomaly.title}", anomaly_path(anomaly), class:"btn-block a-link" %></h4>
                 </div>
               </tbody>
           </table>
