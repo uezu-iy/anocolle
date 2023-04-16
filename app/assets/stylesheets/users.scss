@@ -1,0 +1,72 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+/* ログイン */
+.device_frame {
+    max-width: 600px;
+    text-align: center;
+    padding: 24px;
+    margin: 0px auto;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow:0px 1px 3px 0px rgba(166,168,176,0.6) ;
+}
+
+.device {
+    padding-top: 36px;
+    font-size: 16px;
+}
+
+/* マイページ */
+.user-nav {
+  width: 65%;
+  font-size: 18px;
+  padding: 30px;
+}
+
+.user-nav-a:before {
+  content: '';
+  position: absolute;
+  left: 40%;
+  bottom: -15px;/*線の上下位置*/
+  display: inline-block;
+  width: 120px;/*線の長さ*/
+  height: 5px;/*線の太さ*/
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);/*位置調整*/
+  background-color: rgb(183, 210, 238);/*線の色*/
+  border-radius: 2px;/*線の丸み*/
+}
+
+.user-nav-b:before {
+  content: '';
+  position: absolute;
+  left: 37%;
+  bottom: -15px;/*線の上下位置*/
+  display: inline-block;
+  width: 120px;/*線の長さ*/
+  height: 5px;/*線の太さ*/
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);/*位置調整*/
+  background-color: rgb(183, 210, 238);/*線の色*/
+  border-radius: 2px;/*線の丸み*/
+}
+
+.user-text:hover {
+  text-decoration: none;
+}
+
+.update-content {
+  border-bottom: 1px solid #eaedef;
+  padding: 20px;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+.user-view-box {
+  max-width: 650px;
+  background-color: #fff;
+  border: 1px solid #eaedef;
+  margin: 30px auto;
+}
