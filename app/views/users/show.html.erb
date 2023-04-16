@@ -1,0 +1,51 @@
+<div class="container-fluid ">
+  <div class="row user-nav">
+    <div class="col-2 offset-md-1">
+      <%= link_to "アカウント",users_path, class:"user-text" %>
+    </div>
+    <div class="col-2 user-nav-b">
+      <%= link_to "投稿履歴",user_path(current_user.id), class:"user-text" %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="col-12 text-center">
+      <h2>投稿履歴</h2>
+    </div>
+  </div>
+  <% @anomalys.each do |anomaly| %>  
+    <div class="col-xs-12 anomalys">
+      <div class="row">
+        <div class="anomaly text-break">
+          <table>
+            <thead>
+              <tr align="center">
+                <th>タイトル</th>
+                <th>確認</th>
+                <th>編集</th>
+                <th>削除</th>
+              </tr>
+            </thead>  
+              <tbody>
+                <tr>
+                  <td><%= anomaly.title %></td>
+                  <td>
+                    <%= link_to "確認", anomaly %>
+                  </td>
+                  <td>
+                    <%= link_to "編集", [:edit, anomaly] %>
+                  </td>
+                  <td>
+                    <%= link_to "削除", anomaly, method: :delete, data: { confirm: "本当に削除しますか？" } %>
+                  </td>
+                </tr>
+                <div class="anomaly-content">
+                  <h4><%= link_to "#{anomaly.title}", anomaly_path(anomaly), class:"btn-block a-link" %></h4>
+                </div>
+              </tbody>
+          </table>
+        </div>
+      </div>
+    </div>      
+  <% end %>
+</div>
