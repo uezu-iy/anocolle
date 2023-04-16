@@ -6,6 +6,7 @@ class AnomalysController < ApplicationController
   end
 
   def new
+    @user = current_user
     @anomaly = Anomaly.new
   end
   
@@ -57,6 +58,6 @@ class AnomalysController < ApplicationController
 
   private
   def anomaly_params
-    params.require(:anomaly).permit(:title, :content)
+    params.require(:anomaly).permit(:title, :content, :user_id)
   end
 end
