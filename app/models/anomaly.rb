@@ -3,6 +3,7 @@ class Anomaly < ApplicationRecord
   has_many :anomaly_tags,dependent: :destroy
   has_many :tags,through: :anomaly_tags
   belongs_to :user
+  has_many :comments, dependent: :destroy
 
   def self.ransackable_attributes(auth_object = nil)
     ["title"]
