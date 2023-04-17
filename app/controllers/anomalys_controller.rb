@@ -1,4 +1,5 @@
 class AnomalysController < ApplicationController
+  before_action :authenticate_user!, only: %i[new create update destroy edit]
   def index
     @q = Anomaly.ransack(params[:q])
     @anomalys = @q.result
@@ -26,6 +27,8 @@ class AnomalysController < ApplicationController
   def show
     @anomaly = Anomaly.find(params[:id])
     @anomaly_tags = @anomaly.tags
+    @comments = @anomaly.comments
+    @comment = current_user.comments.new
   end
 
   def edit

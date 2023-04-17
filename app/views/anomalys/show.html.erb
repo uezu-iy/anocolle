@@ -7,6 +7,26 @@
   <%= @anomaly.content %>
 </div>
 
+
+
+<h2> コメントをする</h2>
+
+<div class="comment">
+  <%= form_with(model:[@anomaly, @comment], method: :anomaly) do |f| %>
+    <%= f.text_area :comment_content %>
+    <%= f.hidden_field :anomaly_id, value: @anomaly.id %>
+    <%= f.submit 'コメントする' %>
+  <% end %>
+  
+    <h2> コメント一覧</h2>
+  
+    <% @comments.each do |comment| %>
+      <%= comment.comment_content %>  #コメントの内容が表示される
+    <% end %>
+  
+   <%= link_to 'ホーム', root_path %>
+ </div>
+
 <%= link_to "戻る",:back, class: "btn other-btn btn-block"  %>
 
 <div class="author float-right">
