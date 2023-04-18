@@ -1,39 +1,23 @@
-<div class="anomaly-show text-break">
-  <h2 class="my-3"><%= @anomaly.title %></h2>
-  
-  <% @anomaly_tags.each do |tag| %>
-    <%= link_to tag.tag_name,search_tag_path(tag_id: tag.id)%><%="(#{tag.anomalys.count})" %>
-  <% end %>
-  <%= @anomaly.content %>
-</div>
-
-
-
-<h2> コメントをする</h2>
-
-<div class="comment">
-  <%= form_with(model:[@anomaly, @comment], method: :anomaly) do |f| %>
-    <%= f.text_area :comment_content %>
-    <%= f.hidden_field :anomaly_id, value: @anomaly.id %>
-    <%= f.submit 'コメントする' %>
-  <% end %>
-  
-    <h2> コメント一覧</h2>
-  
-    <% @comments.each do |comment| %>
-      <%= comment.comment_content %>  #コメントの内容が表示される
+<div class="container">
+  <div class="anomaly-show text-break">
+    <h2 class="my-3"><%= @anomaly.title %></h2>
+    
+    <% @anomaly_tags.each do |tag| %>
+      <%= link_to tag.tag_name,search_tag_path(tag_id: tag.id)%><%="(#{tag.anomalys.count})" %>
     <% end %>
+    <%= @anomaly.content %>
+  </div>
   
-   <%= link_to 'ホーム', root_path %>
- </div>
+  <%= render @comments %>
 
-<%= link_to "戻る",:back, class: "btn other-btn btn-block"  %>
-
-<div class="author float-right">
-  <%= link_to edit_anomaly_path(@anomaly), class:"btn" do %>
-    編集
-  <% end %>
-  <%= link_to anomaly_path(@anomaly), method: :delete, data: { confirm: "削除しますか？" }, class:"btn" do %>
-    削除
-  <% end %>
+  <%= link_to "戻る",:back, class: "btn other-btn btn-block"  %>
+  
+  <div class="author float-right">
+    <%= link_to edit_anomaly_path(@anomaly), class:"btn" do %>
+      編集
+    <% end %>
+    <%= link_to anomaly_path(@anomaly), method: :delete, data: { confirm: "削除しますか？" }, class:"btn" do %>
+      削除
+    <% end %>
+  </div>
 </div>

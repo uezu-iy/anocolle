@@ -1,0 +1,26 @@
+<div class="form-group col-md-10 offset-md-1">
+  <div class="comment_form ">
+    <% @comments.each do |comment| %>
+      <div class="comment_list">
+        <%= link_to user_path comment.user do %>
+          <i class="bi bi-person"></i>
+          <span class="username"><%= comment.user.name %></span>
+        <% end %>
+      </div>
+      <div class="">
+        <%= comment.comment_content %>
+      </div>
+    <% end %>
+  </div>
+  
+  <div class="comment_form">
+    <h6>コメント</h6>
+    <%= form_with(model:[@anomaly, @comment], method: :anomaly) do |f| %>
+      <div class="">
+        <%= f.text_area :comment_content, class: "form-control-h form-control"%>
+      </div>  
+      <%= f.hidden_field :anomaly_id, value: @anomaly.id %>
+      <%= f.submit '投稿', class: "offset-md-5" %>
+    <% end %>
+  </div>
+</div>
