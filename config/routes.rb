@@ -7,4 +7,5 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
   end
   get "search_tag"=>"anomalys#search_tag"
+  resources :comments, only: :destroy
 end
