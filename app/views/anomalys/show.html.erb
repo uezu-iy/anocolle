@@ -8,7 +8,7 @@
     <%= @anomaly.content %>
   </div>
   
-  <%= render @comments %>
+  <%= render partial: 'comments/comment' %>
 
   <%= link_to "戻る",:back, class: "btn other-btn btn-block"  %>
   
