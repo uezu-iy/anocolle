@@ -10,6 +10,15 @@
       <div class="">
         <%= comment.comment_content %>
       </div>
+      <% if comment.user_id == @current_user.id %>
+        <div class="row">
+          <div class="offset-md-11">
+            <%= link_to comment_path(comment), method: :delete do %>
+              <i class="bi bi-x"></i>削除
+            <% end %>
+          </div>
+        </div>
+      <% end %>
     <% end %>
   </div>
   
