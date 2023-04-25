@@ -53,6 +53,9 @@
             <i class="fas fa-sign-in-alt icon"></i>ログイン
           <% end %>
         </li>
+        <li class="nav-item active">
+          <%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post, class:'nav-link' %>
+        </li>
       </ul>
     <% end %>  
   </div>
