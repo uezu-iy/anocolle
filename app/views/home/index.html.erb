@@ -1,0 +1,55 @@
+<div class="sample-main">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container">
+          <div class=" carousel-caption text-left">
+            <div class="carousel-text">
+              <h1>異常共有ツール</h1>
+              <h1>anocolleとは</h1>
+              <p>工場などの製造の現場で機械の異常を共有、投稿できるサービスです。</p>
+            </div>
+            <p><%= link_to "投稿を見る", anomalys_path, class: "btn btn-lg main-btn" %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container marketing">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="cat-icon">
+          <%= image_tag 'icon1.png' %>
+        </div>
+        <div class="cat-cap">
+          <h4>異常を検索する</h4>
+        </div>
+        <p>現場にいない人や新人が過去にあった異常を検索し確認できます。</p>
+      </div>
+      <div class="col-lg-4">
+        <div class="cat-icon">
+          <%= image_tag 'icon2.png' %>
+        </div>
+        <div class="cat-cap">
+          <h4>異常を投稿する</h4>
+        </div>
+        <p>異常の対処法や何が必要かどんな物が現場で足りてないか投稿できます。</p>
+      </div>
+      <div class="col-lg-4">
+        <div class="cat-icon">
+          <%= image_tag 'icon3.png' %>
+        </div>
+        <div class="cat-cap">
+          <h4>コメントする</h4>
+        </div>
+        <p>外部の人が現場であった異常についてコメントできます。</p>
+      </div>
+    </div>
+
+  <!-- FOOTER -->
+  <footer class="container">
+    <p class="float-right"><a href="#">Back to top</a></p>
+    <p>&copy; 2017-{{ site.time | date: "%Y" }} Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+  </footer>
+</div>
