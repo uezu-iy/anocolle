@@ -29,7 +29,8 @@
 }
 .text-center {
   color: #6c757d;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  margin-top: 50px;
 }
 a {
   color: $main-color;
@@ -128,4 +129,30 @@ body {
   white-space: nowrap;
   vertical-align: middle;
   display: table-cell;
+}
+
+.btn-outline-post {
+  color: $sub-color;
+  background-color: transparent;
+  background-image: none;
+  border-color: $sub-color;
+}
+
+.btn-outline-post:hover,
+.btn-outline-post:not(:disabled):not(.disabled):active, .btn-outline-post:not(:disabled):not(.disabled).active,
+.show > .btn-outline-post.dropdown-toggle {
+  color: #fff;
+  background-color: $sub-color;
+  border-color: $sub-color;
+}
+
+.btn-outline-post:focus, .btn-outline-post.focus,
+.btn-outline-post:not(:disabled):not(.disabled):active:focus, .btn-outline-post:not(:disabled):not(.disabled).active:focus,
+.show > .btn-outline-post.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+.btn-outline-post.disabled, .btn-outline-post:disabled {
+  color: $sub-color;
+  background-color: transparent;
 }
