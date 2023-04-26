@@ -5,6 +5,12 @@
     </div>
   </div>
 
+  <% if user_signed_in? %>
+    <div class="col offset-md-10 post-form">
+      <%= link_to '投稿する', new_anomaly_path, class:'btn btn-outline-post' %>
+    </div>
+  <% end %>
+
   <div class="col-xs-12">
     <%= search_form_for @q, url: anomalys_path do |f| %>
       <div class="input-group">
@@ -17,7 +23,7 @@
       </div>
     <% end %>
   </div>
-  
+
   <% @tag_list.each do |list|%>
     <%=link_to list.tag_name, search_tag_path(tag_id: list.id) %>
     <%="(#{list.anomalys.count})" %>
