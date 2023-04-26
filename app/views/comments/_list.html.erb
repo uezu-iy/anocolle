@@ -10,7 +10,7 @@
       <div class="">
         <%= comment.comment_content %>
       </div>
-      <% if comment.user_id == @current_user.id %>
+      <% if comment.user == current_user %>
         <div class="row">
           <div class="offset-md-11">
             <%= link_to comment_path(comment), method: :delete do %>
@@ -19,17 +19,6 @@
           </div>
         </div>
       <% end %>
-    <% end %>
-  </div>
-  
-  <div class="comment_form">
-    <h6>コメント</h6>
-    <%= form_with(model:[@anomaly, @comment], method: :anomaly) do |f| %>
-      <div class="">
-        <%= f.text_area :comment_content, class: "form-control-h form-control"%>
-      </div>  
-      <%= f.hidden_field :anomaly_id, value: @anomaly.id %>
-      <%= f.submit '投稿', class: "offset-md-5" %>
     <% end %>
   </div>
 </div>

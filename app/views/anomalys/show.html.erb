@@ -8,7 +8,11 @@
     <%= @anomaly.content %>
   </div>
   
-  <%= render partial: 'comments/comment' %>
+  <%= render 'comments/list' %>
+
+  <% if user_signed_in? %>
+    <%= render "comments/form" %>
+  <% end %> 
 
   <%= link_to "戻る",:back, class: "btn other-btn btn-block"  %>
   

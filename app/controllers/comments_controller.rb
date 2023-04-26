@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def create
+    @anomaly = Anomaly.find(params[:anomaly_id])
     @comment = current_user.comments.new(comment_params)
     if @comment.save
       redirect_back(fallback_location: root_path)
