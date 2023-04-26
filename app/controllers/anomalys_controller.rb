@@ -28,7 +28,6 @@ class AnomalysController < ApplicationController
     @anomaly = Anomaly.find(params[:id])
     @anomaly_tags = @anomaly.tags
     @comments = @anomaly.comments
-    @comment = current_user.comments.new
   end
 
   def edit
