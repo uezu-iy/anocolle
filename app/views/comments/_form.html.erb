@@ -1,0 +1,12 @@
+<div class="form-group col-md-10 offset-md-1">
+  <div class="comment_form">
+    <h6>コメント</h6>
+    <%= form_with model:Comment.new, url: anomaly_comments_path(@anomaly.id), method: :post,local: true do |f| %>
+      <div class="">
+        <%= f.text_area :comment_content, class: "form-control-h form-control"%>
+      </div>  
+      <%= f.hidden_field :anomaly_id, value: @anomaly.id %>
+      <%= f.submit '投稿', class: "offset-md-5" %>
+    <% end %>
+  </div>
+</div>
