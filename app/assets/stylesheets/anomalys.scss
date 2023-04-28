@@ -31,3 +31,40 @@
 .post-form {
   margin-bottom: 20px;
 }
+
+/* ページネーション */
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination {
+  .active {
+    a, span {
+      background-color: $main-color;
+      border-color: $main-color;
+      &:hover, &:focus {
+        background-color: $main-color;
+        border-color: $accent-color;
+      }
+    }
+  }
+  li {
+    a,span {
+      border-color: $main-color;
+      color: $main-color;
+      &:hover, &:focus {
+        border-color: $main-color;
+        color: $main-color;
+        transition:0.5s all;
+      }
+    }
+  }
+}
+
+.page-item-i.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: $main-color;
+  border-color: $main-color;
+}
