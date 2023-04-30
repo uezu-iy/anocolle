@@ -1,19 +1,19 @@
-<h3 class="text-center"><%= "#{@tag.tag_name} を含む投稿一覧" %></h3>
-div class="container-fluid">
-  <div class="row">
-    <div class="col-12 text-center">
-      <h2>異常一覧</h2>
-    </div>
-  </div>
+<h3 class="text-center"><%= "#{@tag.tag_name} を含む異常一覧" %></h3>
+<div class="container-fluid">
 
 <% @tag_list.each do |list|%>
-  <%=link_to list.tag_name, search_tag_path(tag_id: list.id) %>
-  <%="(#{list.anomalys.count})" %>
+  <div class="anomaly-tags">
+    <i class="bi bi-tag"></i>
+    <%=link_to list.tag_name, search_tag_path(tag_id: list.id) %>
+    <%="(#{list.anomalys.count})" %>
+  </div>
 <% end %>
 
-<% @anomalys.each do |anomaly| %>
-  <i class="fas fa-tag"><%= anomaly.tags.map(&:tag_name).join(', ') %></i>
-<% end %>
+<div class="anomaly-tags mt-2">
+  <% @anomalys.each do |anomaly| %>
+    <i class="fas fa-tag"><%= anomaly.tags.map(&:tag_name).join(', ') %></i>
+  <% end %>
+</div>
 
   <% @anomalys.each do |anomaly| %>  
     <div class="col-xs-12 anomalys">
@@ -43,7 +43,7 @@ div class="container-fluid">
                 </tr>
           
                 <div class="anomaly-content">
-                  <h4><%= link_to "#{anomaly.title}", anomaly_path(anomaly), class:"btn-block erb-link" %></h4>
+                  <h4><%= link_to "#{anomaly.title}", anomaly_path(anomaly), class:"btn-block a-link" %></h4>
                 </div>
               </tbody>
           </table>
