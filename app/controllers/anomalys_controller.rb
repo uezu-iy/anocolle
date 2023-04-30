@@ -12,8 +12,7 @@ class AnomalysController < ApplicationController
   end
   
   def create
-    @anomaly = Anomaly.new(anomaly_params)
-
+    @anomaly = current_user.anomalys.new(anomaly_params)
     tag_list = params[:anomaly][:tag_name].split(',')
     if @anomaly.save
       @anomaly.save_tag(tag_list)
