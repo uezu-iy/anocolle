@@ -1,56 +1,21 @@
 <h3 class="text-center"><%= "#{@tag.tag_name} を含む異常一覧" %></h3>
 <div class="container-fluid">
-
-<% @tag_list.each do |list|%>
-  <div class="anomaly-tags">
-    <i class="bi bi-tag"></i>
-    <%=link_to list.tag_name, search_tag_path(tag_id: list.id) %>
-    <%="(#{list.anomalys.count})" %>
-  </div>
-<% end %>
-
-<div class="anomaly-tags mt-2">
-  <% @anomalys.each do |anomaly| %>
-    <i class="fas fa-tag"><%= anomaly.tags.map(&:tag_name).join(', ') %></i>
+  <% @tag_list.each do |list|%>
+    <div class="anomaly-tags">
+      <i class="bi bi-tag"></i>
+      <%=link_to list.tag_name, search_tag_path(tag_id: list.id) %>
+      <%="(#{list.anomalys.count})" %>
+    </div>
   <% end %>
-</div>
-
-  <% @anomalys.each do |anomaly| %>  
-    <div class="col-xs-12 anomalys">
-      <div class="row">
-        <div class="anomaly text-break">
-          <table>
-            <thead>
-              <tr align="center">
-                <th>タイトル</th>
-                <th>確認</th>
-                <th>編集</th>
-                <th>削除</th>
-              </tr>
-            </thead>  
-              <tbody>
-                <tr>
-                  <td><%= anomaly.title %></td>
-                  <td>
-                    <%= link_to "確認", anomaly %>
-                  </td>
-                  <td>
-                    <%= link_to "編集", [:edit, anomaly] %>
-                  </td>
-                  <td>
-                    <%= link_to "削除", anomaly, method: :delete, data: { confirm: "本当に削除しますか？" } %>
-                  </td>
-                </tr>
-          
-                <div class="anomaly-content">
-                  <h4><%= link_to "#{anomaly.title}", anomaly_path(anomaly), class:"btn-block a-link" %></h4>
-                </div>
-              </tbody>
-          </table>
-        </div>
-      </div>
-    </div>      
-  <% end %>  
+  
+  <div class="anomaly-tags mt-2">
+    <% @anomalys.each do |anomaly| %>
+      <i class="fas fa-tag"><%= anomaly.tags.map(&:tag_name).join(', ') %></i>
+    <% end %>
+  </div>
+  
+  <%= render 'anomaly_list' %>
+    
 </div>
 
 <%= link_to "戻る",:back, class: "btn other-btn btn-block"  %>
