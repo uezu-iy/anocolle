@@ -25,8 +25,11 @@
   </div>
 
   <% @tag_list.each do |list|%>
-    <%=link_to list.tag_name, search_tag_path(tag_id: list.id) %>
-    <%="(#{list.anomalys.count})" %>
+    <div class="anomaly-tags">
+      <i class="bi bi-tag"></i>
+      <%=link_to list.tag_name, search_tag_path(tag_id: list.id) %>
+      <%="(#{list.anomalys.count})" %>
+    </div>
   <% end %>
 
   <% @anomalys.each do |anomaly| %>  
