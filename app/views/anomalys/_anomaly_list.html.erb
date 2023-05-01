@@ -35,7 +35,11 @@
               </div>
             </tbody>
         </table>
+        <% anomaly.tags.each do |tag| %>
+          <i class="bi bi-tag"></i>
+          <%= link_to tag.tag_name,search_tag_path(tag_id: tag.id)%>
+        <% end %>     
       </div>
     </div>
-  </div>      
+  </div>
 <% end %>
