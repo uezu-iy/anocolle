@@ -30,18 +30,26 @@ class AnomalysController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @anomaly = Anomaly.find(params[:id])
     @tag_list=@anomaly.tags.pluck(:tag_name).join(',')
   end
 
   def update
     @anomaly = Anomaly.find(params[:id])
-     if @anomaly.update(anomaly_params)
-       flash[:notice] = "更新しました"
-       redirect_to :anomalys
-     else
-       render "edit"
-     end
+    tag_list = params[:anomaly][:tag_name].split(',')
+    if @anomaly.update(anomaly_params)
+      # このanomaly_idに紐づいていたタグを@oldに入れる
+      @old_relations=AnomalyTag.where(anomaly_id: @anomaly.id)
+      # それらを取り出し消す。
+      @old_relations.each do |relation|
+      relation.delete
+      end  
+      @anomaly.save_tag(tag_list)
+      redirect_to anomaly_path(@anomaly.id), notice: '更新完了しました'
+    else
+      render "edit"
+    end
   end
 
   def destroy
