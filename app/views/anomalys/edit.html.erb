@@ -1,2 +1,28 @@
 <h1 class="text-center">編集</h1>
-<%= render "form" %>
+
+<div class="form-group col-md-8 offset-md-2">
+  <%= form_with model: @anomaly, url: anomaly_path do |f| %>
+    <%= f.hidden_field :user_id, :value => @user.id %>
+    <div class="new_form_frame">
+      <%= f.label :title, "タイトル" %>
+      <%= f.text_field :title, required: true, placeholder: "タイトル", class:"form-control form" %>
+    </div>
+
+    <div class="new_form_frame">
+      <%= f.label :tag_name, "タグ" %>
+      <%= f.text_field :tag_name, placeholder: "タグ (,で区切ると複数タグ登録できます)", class:"form-control form" %>
+    </div>
+  
+    <div class='field new_form_frame'>
+      <%= f.label :content, "本文" %>
+      <%= f.rich_text_area :content %>
+    </div>
+  
+    <div class="actions new_form_frame">
+      <%= f.submit "投稿", class:"post-btn mt-5" %>
+    </div>
+  <% end %>
+  <div class='field new_form_frame'>
+    <%= link_to "取り消し",:back, class: "btn btn-block cancel-btn mt-5 ", data: { confirm: "作成データを破棄しますか？" } %>
+  </div> 
+</div>
