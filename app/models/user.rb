@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
 
-  has_many :anomalys
-  has_many :comments
+  has_many :anomalys, dependent: :nullify
+  has_many :comments, dependent: :nullify
 
   def self.guest
     find_or_create_by!(email: 'guest@example.com') do |user|
