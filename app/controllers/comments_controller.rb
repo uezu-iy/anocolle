@@ -5,8 +5,10 @@ class CommentsController < ApplicationController
     @anomaly = Anomaly.find(params[:anomaly_id])
     @comment = current_user.comments.new(comment_params)
     if @comment.save
+      flash[:success] = "コメント投稿しました"
       redirect_back(fallback_location: root_path)
     else
+      flash[:danger] = "コメントを入力してください"
       redirect_back(fallback_location: root_path)
     end
   end
