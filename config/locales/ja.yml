@@ -25,8 +25,15 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+      anomaly:
+        title: タイトル
+        content: 本文
+      tag:
+        tag_name: タグ名
     models:
       user: ユーザー
+      anomaly: 投稿
+      tag: タグ
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
