@@ -1,4 +1,7 @@
 class Anomaly < ApplicationRecord
+  validates :title, presence: true
+  validates :content, presence: true
+
   has_rich_text :content
   has_many :anomaly_tags,dependent: :destroy
   has_many :tags,through: :anomaly_tags
