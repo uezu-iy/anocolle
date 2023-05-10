@@ -1,6 +1,5 @@
 <div class="form-group col-md-8 offset-md-2">
   <%= form_with model: @anomaly, url: anomalys_path do |f| %>
-    <%= f.hidden_field :user_id, :value => @user.id %>
     <div class="new_form_frame">
       <%= f.label :title, "タイトル" %>
       <%= f.text_field :title, required: true, placeholder: "タイトル", class:"form-control form" %>
