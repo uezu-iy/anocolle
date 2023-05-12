@@ -15,6 +15,7 @@ RSpec.describe Anomaly, type: :model do
       let(:anomaly) { build(:anomaly, title: nil) }
       it "投稿の作成に失敗する" do
         expect(anomaly).to be_invalid
+        expect(anomaly.errors.full_messages).to include('タイトルを入力してください')
       end
     end
 
@@ -22,6 +23,7 @@ RSpec.describe Anomaly, type: :model do
       let(:anomaly) { build(:anomaly, content: nil) }
       it "投稿の作成に失敗する" do
         expect(anomaly).to be_invalid
+        expect(anomaly.errors.full_messages).to include('本文を入力してください')
       end
     end
   end
