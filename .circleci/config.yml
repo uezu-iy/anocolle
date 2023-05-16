@@ -35,8 +35,7 @@ jobs:
   test:
     parallelism: 3
     docker:
-      - image: cimg/ruby:3.1.3-browsers
-      - image: circleci/node:16
+      - image: cimg/ruby:3.1.3-node-browsers
       - image: circleci/postgres:9.5-alpine
         environment:
           POSTGRES_USER: user_name
@@ -60,9 +59,11 @@ jobs:
           name: rails db:migrate
           command: bundle exec rails db:migrate
       - run:
+          name: webpacker compile
+          command: bundle exec rake assets:precompile
+      - run:
           name: Database setup
           command: bundle exec rails db:schema:load --trace
-      - run: bundle exec bin/webpack
       - run:
           name: Rspec
           command: bundle exec rspec
