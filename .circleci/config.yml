@@ -1,6 +1,7 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@1.1.0
+  node: circleci/node@2
   browser-tools: circleci/browser-tools@1.1
 
 jobs:
@@ -10,10 +11,10 @@ jobs:
       - image: circleci/node:16
     steps:
       - checkout
-      - ruby/install-deps
-      - node/install-packages:
-          pkg-manager: yarn
-          cache-key: "yarn.lock"
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
+      - run: node --version
   rubocop:
     parallelism: 3
     docker:
@@ -27,9 +28,10 @@ jobs:
     steps:
       - checkout
       - ruby/install-deps
-      - node/install-packages:
-          pkg-manager: yarn
-          cache-key: "yarn.lock"
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
+      - run: node --version
       - run:
           name: run rubocop
           command: bundle exec rubocop
@@ -54,9 +56,10 @@ jobs:
       - browser-tools/install-browser-tools
       - checkout
       - ruby/install-deps
-      - node/install-packages:
-          pkg-manager: yarn
-          cache-key: "yarn.lock"
+      - node/install:
+          install-yarn: true
+          node-version: '16.13'
+      - run: node --version
       - run:
           name: rails db:migrate
           command: bundle exec rails db:migrate
