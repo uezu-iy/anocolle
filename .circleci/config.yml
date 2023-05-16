@@ -8,6 +8,7 @@ jobs:
   build:
     docker:
       - image: cimg/ruby:3.1.3-browsers
+      - image: circleci/node:16
     steps:
       - checkout
       - ruby/install-deps
@@ -36,6 +37,7 @@ jobs:
     parallelism: 3
     docker:
       - image: cimg/ruby:3.1.3-browsers
+      - image: circleci/node:16
       - image: circleci/postgres:9.5-alpine
         environment:
           POSTGRES_USER: user_name
