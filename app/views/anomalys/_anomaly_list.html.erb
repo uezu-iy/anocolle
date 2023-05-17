@@ -6,35 +6,11 @@
           <%= link_to "#{anomaly.user.name}", users_path(anomaly.user.id), class:"erb-link" %>
           <%= "が#{anomaly.created_at.strftime('%Y/%m/%d %H:%M')}に投稿" %>
         </div>
-        <table>
-          <thead>
-            <tr align="center">
-              <th>タイトル</th>
-              <th>確認</th>
-              <th>編集</th>
-              <th>削除</th>
-            </tr>
-          </thead>  
-            <tbody>
-              <tr>
-                <td>
-                  <%= anomaly.title %>
-                </td>
-                <td>
-                  <%= link_to "確認", anomaly %>
-                </td>
-                <td>
-                  <%= link_to "編集", [:edit, anomaly] %>
-                </td>
-                <td>
-                  <%= link_to "削除", anomaly, method: :delete, data: { confirm: "本当に削除しますか？" } %>
-                </td>
-              </tr>
-              <div class="anomaly-content">
-                <h4><%= link_to "#{anomaly.title}", anomaly_path(anomaly), class:"btn-block a-link" %></h4>
-              </div>
-            </tbody>
-        </table>
+        
+        <div class="anomaly-content">
+          <h4><%= link_to "#{anomaly.title}", anomaly_path(anomaly), class:"btn-block a-link" %></h4>
+        </div>
+
         <% anomaly.tags.each do |tag| %>
           <i class="bi bi-tag"></i>
           <%= link_to tag.tag_name,search_tag_path(tag_id: tag.id)%>
