@@ -4,7 +4,7 @@ RSpec.describe "Anomalies", type: :system do
   describe '異常の投稿' do
     let(:user) { create(:user) }
     let!(:anomaly) { create(:anomaly) }
-    let!(:tag) { create(:tag) }
+    let!(:anomaly_tag) { create(:anomaly_tag) }
 
     before do
       driven_by(:rack_test)
@@ -32,7 +32,7 @@ RSpec.describe "Anomalies", type: :system do
 
       it 'タグ名をクリックしたときタグを含む一覧ページに移行' do
         visit anomalys_path
-        click_link tag.tag_name
+        click_link anomaly_tag.tag.tag_name
         expect(current_path).to eq search_tag_path
       end
     end
