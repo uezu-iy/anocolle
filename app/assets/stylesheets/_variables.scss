@@ -13,7 +13,7 @@ $anomaly-list-border-color: #cac8c8;
   color: #fff;
 }
 
-@mixin anomaly_btn($color: $main-color) {
+@mixin anomaly_btn($color: $sub-color) {
   margin-top: 10px;
   width: 100%;
   height: 50px;
