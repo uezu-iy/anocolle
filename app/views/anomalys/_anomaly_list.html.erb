@@ -3,8 +3,9 @@
     <div class="row">
       <div class="anomaly text-break">
         <div class="anomaly-header">
+        <i class="bi bi-person"></i>
           <%= link_to "#{anomaly.user.name}", users_path(anomaly.user.id), class:"erb-link" %>
-          <%= "が#{anomaly.created_at.strftime('%Y/%m/%d %H:%M')}に投稿" %>
+          <%= "が投稿" %>
         </div>
         
         <div class="anomaly-content">
@@ -14,7 +15,14 @@
         <% anomaly.tags.each do |tag| %>
           <i class="bi bi-tag"></i>
           <%= link_to tag.tag_name,search_tag_path(tag_id: tag.id)%>
-        <% end %>     
+        <% end %>
+        
+        <div class="text-right">
+          <%= "作成日:#{anomaly.created_at.strftime('%Y/%m/%d %H:%M')}" %>
+          <span class="mgr-10">
+            <%= "更新日:#{anomaly.updated_at.strftime('%Y/%m/%d %H:%M')}" %>
+          </span>
+        </div>
       </div>
     </div>
   </div>
