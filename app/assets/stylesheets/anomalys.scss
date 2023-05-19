@@ -4,8 +4,9 @@
 @import "variables.scss";
 
 .anomaly-show {
-  background-color: $anomaly-list-color;
+  background-color: white;
   padding: 1rem;
+  box-shadow: 2px 2px 7px 6px RGB(0 0 0 / 4%);
 }
 
 .search-form {
@@ -48,6 +49,10 @@
   margin-left : 15px;
 }
 
+.anomaly-tags {
+  margin-bottom: 110px;
+}
+
 /* ページネーション */
 .pagination {
   display: flex;
@@ -61,7 +66,7 @@
       border-color: $main-color;
       &:hover, &:focus {
         background-color: $main-color;
-        border-color: $accent-color;
+        border-color: $other-color;
       }
     }
   }

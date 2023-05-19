@@ -18,11 +18,8 @@
       <%= f.rich_text_area :content %>
     </div>
   
-    <div class="actions new_form_frame">
-      <%= f.submit "投稿", class:"post-btn mt-5" %>
+    <div class="actions new_form_frame text-center">
+      <%= f.submit "投稿", class:"post-btn mt-5 w-50" %>
     </div>
   <% end %>
-  <div class='field new_form_frame'>
-    <%= link_to "取り消し",:back, class: "btn btn-block cancel-btn mt-5 ", data: { confirm: "作成データを破棄しますか？" } %>
-  </div> 
 </div>

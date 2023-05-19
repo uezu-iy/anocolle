@@ -1,5 +1,4 @@
 $main-color: #13165e;
-$accent-color: #7ec2c2;
 $other-color: #c6cff1;
 $sub-color: #ff6a00;
 
@@ -8,6 +7,12 @@ $anomaly-list-color: #f8f8f8;
 $anomaly-list-border-color: #cac8c8;
 
 @mixin btn_color($color: $sub-color) {
+  background-color: $color;
+  border-color: $color;
+  color: #fff;
+}
+
+@mixin btn_other($color: $other-color) {
   background-color: $color;
   border-color: $color;
   color: #fff;
