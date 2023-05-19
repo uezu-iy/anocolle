@@ -4,8 +4,9 @@
 @import "variables.scss";
 
 .anomaly-show {
-  background-color: $anomaly-list-color;
+  background-color: white;
   padding: 1rem;
+  box-shadow: 2px 2px 7px 6px RGB(0 0 0 / 4%);
 }
 
 .search-form {
