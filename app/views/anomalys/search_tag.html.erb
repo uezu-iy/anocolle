@@ -1,21 +1,6 @@
-<h3 class="text-center"><%= "#{@tag.tag_name} を含む異常一覧" %></h3>
 <div class="container-fluid">
-  <% @tag_list.each do |list|%>
-    <div class="anomaly-tags">
-      <i class="bi bi-tag"></i>
-      <%=link_to list.tag_name, search_tag_path(tag_id: list.id) %>
-      <%="(#{list.anomalys.count})" %>
-    </div>
-  <% end %>
-  
-  <div class="anomaly-tags mt-2">
-    <% @anomalys.each do |anomaly| %>
-      <i class="fas fa-tag"><%= anomaly.tags.map(&:tag_name).join(', ') %></i>
-    <% end %>
-  </div>
-  
-  <%= render 'anomaly_list' %>
-    
+<div class="anomaly-tags">
+  <h3 class=" text-center"><%= "#{@tag.tag_name} を含む異常一覧" %></h3>
 </div>
-
-<%= link_to "戻る",:back, class: "btn other-btn btn-block"  %>
+  <%= render 'anomaly_list' %>
+</div>

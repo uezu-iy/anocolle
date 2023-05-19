@@ -90,9 +90,6 @@ footer {
     justify-content: space-between;
   }
 }
-.fa-tags {
-  color: $accent-color;
-}
 
 /* _form */
 .form {
@@ -119,7 +116,7 @@ footer {
   @include btn_color;
 }
 .other-btn {
-  @include btn_color($other-color);
+  @include btn_other($other-color);
 }
 .btn-search {
   background-color: $other-color;
