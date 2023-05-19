@@ -1,7 +1,19 @@
 <div class="container">
   <div class="anomaly-show text-break">
+  <div class="row">
+    <% if @anomaly.user == current_user %>
+      <div class=" offset-md-10">
+        <%= link_to edit_anomaly_path(@anomaly), class:"mgr-10" do %>
+          <i class="bi bi-pencil"></i>編集
+        <% end %>
+        <%= link_to anomaly_path(@anomaly), method: :delete, data: { confirm: "削除しますか？" }, class:"mgr-10" do %>
+          <i class="bi bi-x"></i>削除
+        <% end %>
+      </div>
+    <% end %>
+
     <h2 class="my-3"><%= @anomaly.title %></h2>
-    
+  </div>
     <% @anomaly_tags.each do |tag| %>
       <i class="bi bi-tag"></i>
       <%= link_to tag.tag_name,search_tag_path(tag_id: tag.id)%><%="(#{tag.anomalys.count})" %>
@@ -14,11 +26,4 @@
   <% if user_signed_in? %>
     <%= render "comments/form" %>
   <% end %> 
-
-  <% if @anomaly.user == current_user %>
-    <div class="author float-right">
-      <%= link_to '編集', edit_anomaly_path(@anomaly), class:"btn" %>
-      <%= link_to '削除', anomaly_path(@anomaly), method: :delete, data: { confirm: "削除しますか？" }, class:"btn" %>
-    </div>
-  <% end %>
 </div>
