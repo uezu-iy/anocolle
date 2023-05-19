@@ -15,8 +15,6 @@
     <%= render "comments/form" %>
   <% end %> 
 
-  <%= link_to "戻る",:back, class: "btn other-btn btn-block"  %>
-  
   <% if @anomaly.user == current_user %>
     <div class="author float-right">
       <%= link_to '編集', edit_anomaly_path(@anomaly), class:"btn" %>
