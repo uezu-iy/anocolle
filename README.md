@@ -37,6 +37,17 @@
 |11|タグ機能||
 |12 |コメント機能||
 
+
+
+
+
+
+<img width="469" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/2abce3e3-b4a6-4266-a754-8edfb51bc72b">
+
+
+
+
+
 ```mermaid
   graph TD;
       A-->B;
@@ -47,23 +58,62 @@
 
 ```mermaid
 erDiagram
-　　users ||--o{ posts : "1人のユーザーは0以上の投稿を持つ"
+  users ||--o{ anomalys : "1人のユーザーは0以上の投稿を持つ"
+  tags ||--o{ anomalys : "1人のユーザーは0以上の投稿を持つ"
+  tags ||--o{ anomalys_tag : "1人のユーザーは0以上の投稿を持つ"
+  
   users {
-    bigint id PK
-    string name "ユーザー名"
-    timestamp created_at
-    timestamp deleted_at
+    id bigint
+    name　string 
+    created_at　timestamp 
+    deleted_at　timestamp 
   }
   
-  posts {
-    bigint id PK
-    references user FK
-    string title "投稿タイトル"
-    text content "投稿内容"
-    timestamp created_at
-    timestamp deleted_at
+  anomalys {
+    id bigint
+    title　string
+    content text
+    user_id bigint
+    created_at　timestamp 
+    deleted_at　timestamp 
   }
+  
+  anomalys_tag {
+    id bigint
+    anomaly_id bigint
+    tag_id bigint
+    created_at　timestamp 
+    deleted_at　timestamp 
+  }
+  
+  tags {
+    id bigint
+    tag_name string
+    created_at　timestamp 
+    deleted_at　timestamp 
+  }
+  
+  
+  
 ```
+
+
+
+
+posts {
+    PK　id　bigint
+    FK　user　references  
+    title　string
+    content　text 
+    created_at　timestamp
+    deleted_at　timestamp
+  }
+
+
+
+
+
+
 
 ```mermaid　
 erDiagram
