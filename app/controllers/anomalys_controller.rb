@@ -2,7 +2,7 @@ class AnomalysController < ApplicationController
   before_action :authenticate_user!, only: %i[new create update destroy edit]
   def index
     @q = Anomaly.ransack(params[:q])
-    @anomalys = @q.result.page(params[:page]).per(7)
+    @anomalys = @q.result.includes(:tags, :anomaly_tags, :user).page(params[:page]).per(7)
     @tag_list=Tag.all
   end
 
@@ -62,7 +62,7 @@ class AnomalysController < ApplicationController
   def search_tag
     @tag_list = Tag.all
     @tag = Tag.find(params[:tag_id])
-    @anomalys = @tag.anomalys
+    @anomalys = @tag.anomalys.includes(:tags, :anomaly_tags, :user).page(params[:page]).per(7)
   end
 
   private
