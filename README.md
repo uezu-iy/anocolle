@@ -38,11 +38,13 @@
 |12 |コメント機能||
 
 
+## ER図
+
+<img width="1031" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/b84f9248-3cd5-4b37-959f-2451af4b533f">
 
 
 
 
-<img width="469" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/2abce3e3-b4a6-4266-a754-8edfb51bc72b">
 
 
 
