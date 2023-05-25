@@ -81,7 +81,7 @@ jobs:
           install-yarn: true
           node-version: '16.13'
       - add_ssh_keys:
-          fingerprints:"8a:9b:fc:e3:12:a0:d3:1e:c2:62:98:a6:7b:56:d8:3d"
+          fingerprints: "8a:9b:fc:e3:12:a0:d3:1e:c2:62:98:a6:7b:56:d8:3d"
       - deploy:
           name: Capistrano deploy
           command: bundle exec cap production deploy
