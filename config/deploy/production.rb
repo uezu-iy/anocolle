@@ -9,7 +9,7 @@
 server '35.79.33.31', user: 'ec2-user', roles: %w[app db web]
 
 set :ssh_options, {
-  keys: (ENV['PRODUCTION_SSH_KEY']),
+  keys: ENV.fetch('PRODUCTION_SSH_KEY', nil),
   forward_agent: true
 }
 
