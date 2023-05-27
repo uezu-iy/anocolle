@@ -8,6 +8,11 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 server '35.79.33.31', user: 'ec2-user', roles: %w[app db web]
 
+set :ssh_options, {
+  keys: ENV.fetch('PRODUCTION_SSH_KEY', nil),
+  forward_agent: true
+}
+
 # role-based syntax
 # ==================
 
