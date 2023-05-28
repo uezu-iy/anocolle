@@ -1,7 +1,7 @@
 <% @anomalys.each do |anomaly| %>  
   <div class="col-xs-12 anomalys">
     <div class="row">
-      <div class="anomaly text-break">
+      <div class="anomaly text-break m-mobile">
         <div class="anomaly-header">
         <i class="bi bi-person"></i>
           <%= link_to "#{anomaly.user.name}", users_path(anomaly.user.id), class:"erb-link" %>
