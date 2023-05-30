@@ -43,8 +43,23 @@
 <img width="1031" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/b84f9248-3cd5-4b37-959f-2451af4b533f">
 
 
+## インフラ構成図
 
+<img width="1176" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/e421cfbb-3017-4b5c-afc0-f8d2ee461f1a">
 
+## 使用技術
+
+* 言語 : Ruby(3.1.3)
+* フレームワーク : Ruby on Rails(6.1.7.3)
+* フロントエンド : HTML&CSS/Bootstrap/Javascript
+* DB : PostgreSQL
+* テスト : RSpec
+* 旧インフラ : Heroku + AWS(S3)
+* 新インフラ : AWS(VPC, EC2, RDS, S3, ACM, ALB, IAM) + Capistrano,CircleCI
+* ソースコード管理：GitHub
+* 開発環境：MacOS/Visual Studio Code
+
+　
 
 
 
