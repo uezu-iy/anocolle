@@ -1,24 +1,26 @@
 <div class="container">
   <div class="anomaly-show text-break">
-  <div class="row">
-    <% if @anomaly.user == current_user %>
-      <div class=" offset-md-10">
-        <%= link_to edit_anomaly_path(@anomaly), class:"mgr-10" do %>
-          <i class="bi bi-pencil"></i>編集
-        <% end %>
-        <%= link_to anomaly_path(@anomaly), method: :delete, data: { confirm: "削除しますか？" }, class:"mgr-10" do %>
-          <i class="bi bi-x"></i>削除
-        <% end %>
+    <div class="row">
+      <% if @anomaly.user == current_user %>
+        <div class=" offset-md-10">
+          <%= link_to edit_anomaly_path(@anomaly), class:"mgr-10" do %>
+            <i class="bi bi-pencil"></i>編集
+          <% end %>
+          <%= link_to anomaly_path(@anomaly), method: :delete, data: { confirm: "削除しますか？" }, class:"mgr-10" do %>
+            <i class="bi bi-x"></i>削除
+          <% end %>
+        </div>
+      <% end %>
+  
+      <h2 class="my-3"><%= @anomaly.title %></h2>
+    </div>
+      <% @anomaly_tags.each do |tag| %>
+        <i class="bi bi-tag"></i>
+        <%= link_to tag.tag_name,search_tag_path(tag_id: tag.id)%><%="(#{tag.anomalys.count})" %>
+      <% end %>
+      <div class="anomaly_show_content">
+        <%= @anomaly.content %>
       </div>
-    <% end %>
-
-    <h2 class="my-3"><%= @anomaly.title %></h2>
-  </div>
-    <% @anomaly_tags.each do |tag| %>
-      <i class="bi bi-tag"></i>
-      <%= link_to tag.tag_name,search_tag_path(tag_id: tag.id)%><%="(#{tag.anomalys.count})" %>
-    <% end %>
-    <%= @anomaly.content %>
   </div>
   
   <%= render 'comments/list' %>
