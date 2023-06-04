@@ -14,12 +14,38 @@
 ## 機能と使い方
 
 ### 1. トップページ
-<img width="400" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/6d518e79-b821-4ff5-bee6-17857f19c0b9">
+<img width="500" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/6d518e79-b821-4ff5-bee6-17857f19c0b9">
 
 ---
-### 2. 
+### 2. 異常の検索
+キーワードで異常の検索ができる。また、タグをクリックするとタグに紐づいた投稿一覧を表示できる。
+
+<img width="450" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/66164947-f66d-4e65-9751-13f6a7c6e40d">
+<img width="470" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/5bbde805-3ae7-4484-87fc-5ceb08f1878e">
 
 ---
+### 3. 投稿詳細画面
+異常の詳細を確認できる。
+
+<img width="500" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/c826185e-68aa-42a4-949d-58dc5510cbe0">
+
+---
+
+### 4. コメント機能
+投稿詳細画面で異常の投稿に対して、コメントできる。
+
+<img width="500" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/4553a6c0-5a9e-4272-b802-c0d511adf067">
+
+---
+
+### 5. マイページ
+
+ユーザーの投稿履歴を確認できる。
+
+<img width="500" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/9c2ae70f-5645-44bf-890f-cab803371fed">
+<img width="500" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/cd9c35ea-7f02-4da6-84dc-791deb4c7e64">
+
+
 
 ## 工夫した点
 Action Textの導入
