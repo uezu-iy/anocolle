@@ -45,12 +45,14 @@
 <img width="500" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/9c2ae70f-5645-44bf-890f-cab803371fed">
 <img width="500" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/cd9c35ea-7f02-4da6-84dc-791deb4c7e64">
 
-
-
 ## 工夫した点
-Action Textの導入
-* 異常の詳細や必要な部品、画像などを細かく分けて実装するより、ActionTextを導入することで、
-まとめて記述できるようにした方が自由度があり、書きやすいと思ったので導入しました。
+#### Action Textの導入
+* 異常の詳細や必要な部品、画像などを細かく分けて実装するよりActionTextを導入することで、
+まとめて記述できるようにした方が自由度があり書きやすいと思ったので導入しました。
+
+#### タグ機能と検索機能
+* カテゴリーごとに投稿を分けようと考えたのですが、追加したいカテゴリーが増えていき収集がつかなくなると思ったので、
+いっそタグで管理した方がわかりやすく、種類が多くなっても問題ないので採用しました。
 
 
 ## 機能一覧
@@ -94,131 +96,3 @@ Action Textの導入
 
 　
 
-
-
-
-
-```mermaid
-  graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
-```
-
-```mermaid
-erDiagram
-  users ||--o{ anomalys : "1人のユーザーは0以上の投稿を持つ"
-  tags ||--o{ anomalys : "1人のユーザーは0以上の投稿を持つ"
-  tags ||--o{ anomalys_tag : "1人のユーザーは0以上の投稿を持つ"
-  
-  users {
-    id bigint
-    name　string 
-    created_at　timestamp 
-    deleted_at　timestamp 
-  }
-  
-  anomalys {
-    id bigint
-    title　string
-    content text
-    user_id bigint
-    created_at　timestamp 
-    deleted_at　timestamp 
-  }
-  
-  anomalys_tag {
-    id bigint
-    anomaly_id bigint
-    tag_id bigint
-    created_at　timestamp 
-    deleted_at　timestamp 
-  }
-  
-  tags {
-    id bigint
-    tag_name string
-    created_at　timestamp 
-    deleted_at　timestamp 
-  }
-  
-  
-  
-```
-
-
-
-
-posts {
-    PK　id　bigint
-    FK　user　references  
-    title　string
-    content　text 
-    created_at　timestamp
-    deleted_at　timestamp
-  }
-
-
-
-
-
-
-
-```mermaid　
-erDiagram
-  users ||--o{ posts : "1人のユーザーは0以上の投稿を持つ"
-  users ||--o{ comments: "1人のユーザーは0以上のコメントを持つ"
-  posts ||--o{ comments: "1つの投稿は0以上のコメントを持つ"
-
-  users {
-    bigint id PK
-    string name "ユーザー名"
-    timestamp created_at
-    timestamp deleted_at
-  }
-
-  posts {
-    bigint id PK
-    references user FK
-    string title "投稿タイトル"
-    text content "投稿内容"
-    timestamp created_at
-    timestamp deleted_at
-  }
-
-  comments {
-    bigint id PK
-    references post FK
-    references user FK
-    text content "コメント内容"
-    timestamp created_at
-    timestamp deleted_at
-  }
-```　
-
-
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
