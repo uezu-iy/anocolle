@@ -113,6 +113,15 @@ footer {
   padding-right: 10px;
 }
 
+// フラッシュ
+.alert-notice {
+  @include alert_color;
+}
+
+.alert-danger {
+  padding: 1px;
+}
+
 /* ボタン */
 .main-btn {
   @include btn_color;
