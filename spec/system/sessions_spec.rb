@@ -31,7 +31,7 @@ RSpec.describe "Sessions", type: :system do
         fill_in 'メールアドレス', with: user.email
         fill_in 'パスワード', with: user.password
         click_button 'ログイン'
-        expect(current_path).to eq root_path
+        expect(current_path).to eq anomalys_path
       end
     end
 
@@ -49,7 +49,7 @@ RSpec.describe "Sessions", type: :system do
       it 'ログインが成功すること' do
         visit root_path
         click_link 'ゲストログイン'
-        expect(current_path).to eq root_path
+        expect(current_path).to eq anomalys_path
         expect(page).to have_link 'ログアウト'
       end
     end
@@ -79,7 +79,7 @@ RSpec.describe "Sessions", type: :system do
 
     context '投稿するボタンの表示' do
       it '投稿するボタンが表示されること' do
-        visit root_path
+        visit anomalys_path
         expect(page).to have_link '投稿する'
       end
     end
@@ -88,7 +88,7 @@ RSpec.describe "Sessions", type: :system do
       it 'ログアウトが成功すること' do
         visit root_path
         click_link 'ログアウト'
-        expect(current_path).to eq root_path
+        expect(current_path).to eq anomalys_path
         expect(page).to have_link 'ログイン'
       end
     end
