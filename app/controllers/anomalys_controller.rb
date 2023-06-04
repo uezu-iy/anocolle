@@ -16,7 +16,7 @@ class AnomalysController < ApplicationController
     tag_list = params[:anomaly][:tag_name].split(',')
     if @anomaly.save
       @anomaly.save_tag(tag_list)
-      flash[:notice] = "新規登録をしました"
+      flash[:notice] = "新規投稿をしました"
       redirect_to :anomalys
     else
       render "new"
