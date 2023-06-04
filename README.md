@@ -50,8 +50,8 @@
 
 ユーザーの投稿履歴を確認できる。
 
-<img width="420" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/9c2ae70f-5645-44bf-890f-cab803371fed">
-<img width="420" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/cd9c35ea-7f02-4da6-84dc-791deb4c7e64">
+<img width="410" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/9c2ae70f-5645-44bf-890f-cab803371fed">
+<img width="410" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/cd9c35ea-7f02-4da6-84dc-791deb4c7e64">
 
 ## 工夫した点
 #### Action Textの導入
