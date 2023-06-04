@@ -14,36 +14,44 @@
 ## 機能と使い方
 
 ### 1. トップページ
-<img width="500" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/6d518e79-b821-4ff5-bee6-17857f19c0b9">
+<img width="480" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/6d518e79-b821-4ff5-bee6-17857f19c0b9">
 
 ---
 ### 2. 異常の検索
 キーワードで異常の検索ができる。また、タグをクリックするとタグに紐づいた投稿一覧を表示できる。
 
-<img width="450" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/66164947-f66d-4e65-9751-13f6a7c6e40d">
-<img width="470" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/5bbde805-3ae7-4484-87fc-5ceb08f1878e">
+<img width="430" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/66164947-f66d-4e65-9751-13f6a7c6e40d">
+<img width="450" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/5bbde805-3ae7-4484-87fc-5ceb08f1878e">
 
 ---
-### 3. 投稿詳細画面
+### 3. 新規投稿画面
+
+ユーザー登録したら異常の新規投稿ができる。タグを紐付けてAction Textを使い本文と画像の投稿ができる。
+
+<img width="480" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/049abd6d-e39b-44d0-b0c7-f5f1f6f8ea18">
+
+---
+
+### 4. 投稿詳細画面
 異常の詳細を確認できる。
 
-<img width="500" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/c826185e-68aa-42a4-949d-58dc5510cbe0">
+<img width="480" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/c826185e-68aa-42a4-949d-58dc5510cbe0">
 
 ---
 
-### 4. コメント機能
+### 5. コメント機能
 投稿詳細画面で異常の投稿に対して、コメントできる。
 
-<img width="500" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/4553a6c0-5a9e-4272-b802-c0d511adf067">
+<img width="480" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/4553a6c0-5a9e-4272-b802-c0d511adf067">
 
 ---
 
-### 5. マイページ
+### 6. マイページ
 
 ユーザーの投稿履歴を確認できる。
 
-<img width="500" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/9c2ae70f-5645-44bf-890f-cab803371fed">
-<img width="500" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/cd9c35ea-7f02-4da6-84dc-791deb4c7e64">
+<img width="480" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/9c2ae70f-5645-44bf-890f-cab803371fed">
+<img width="480" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/cd9c35ea-7f02-4da6-84dc-791deb4c7e64">
 
 ## 工夫した点
 #### Action Textの導入
@@ -80,7 +88,7 @@
 
 ## インフラ構成図
 
-<img width="1176" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/e421cfbb-3017-4b5c-afc0-f8d2ee461f1a">
+<img width="1310" alt="image" src="https://github.com/uezu-iy/anocolle/assets/127666360/90991c8e-84df-4acc-94cb-c2ab4c7e1db8">
 
 ## 使用技術
 
