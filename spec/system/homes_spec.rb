@@ -11,7 +11,7 @@ RSpec.describe "Homes", type: :system do
   describe 'トップページでクリックしたとき' do
     context '投稿を見るボタンをクリックしたとき' do
       it '投稿を見るボタンをクリックしたとき異常一覧ページに移行' do
-        visit home_index_path
+        visit root_path
         click_on '投稿を見る'
         expect(current_path).to eq anomalys_path
       end
@@ -19,9 +19,9 @@ RSpec.describe "Homes", type: :system do
 
     context 'ヘッダーをクリックしたとき' do
       it 'ヘッダーの異常一覧をクリックしたとき異常一覧ページに移行' do
-        visit home_index_path
+        visit root_path
         click_on '異常一覧'
-        expect(current_path).to eq root_path
+        expect(current_path).to eq anomalys_path
       end
     end
   end

@@ -15,7 +15,7 @@ RSpec.describe "Users", type: :system do
         fill_in 'パスワード(6文字以上)', with: 'password1'
         fill_in 'パスワード確認', with: 'password1'
         click_button '新しいアカウントを作成'
-        expect(current_path).to eq root_path
+        expect(current_path).to eq anomalys_path
       end
     end
 
