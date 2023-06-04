@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     @anomaly = Anomaly.find(params[:anomaly_id])
     @comment = current_user.comments.new(comment_params)
     if @comment.save
-      flash[:success] = "コメント投稿しました"
+      flash[:notice] = "コメント投稿しました"
       redirect_back(fallback_location: root_path)
     else
       flash[:danger] = "コメントを入力してください"
@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
       @comment.destroy
-      flash[:success] = "コメント削除完了"
+      flash[:notice] = "コメント削除完了"
       redirect_to anomaly_path(@comment.anomaly_id)
   end
   
